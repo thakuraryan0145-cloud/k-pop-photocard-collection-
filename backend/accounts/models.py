@@ -1,5 +1,25 @@
+import uuid
+
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 class User(AbstractUser):
-    pass  # Priyanka replaces this (email login, UUID PK) before the first migration
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+    )
+
+    username = None
+
+    email = models.EmailField(
+        unique=True,
+        blank=False,
+    )
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+
+    def __str__(self):
+        return self.email
