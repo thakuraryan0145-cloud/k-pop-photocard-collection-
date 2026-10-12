@@ -1,15 +1,17 @@
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { registerUser } from "../mock-api";
 
 function Register() {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     formState: { errors },
   } = useForm();
 
-  const password = watch("password");
+  const password = useWatch({
+    control,
+    name :"password"});
 
   const onSubmit = (data) => {
     const user = {
