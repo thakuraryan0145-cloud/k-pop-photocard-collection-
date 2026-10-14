@@ -18,6 +18,14 @@ class User(AbstractUser):
         blank=False,
     )
 
+    favorite_group = models.ForeignKey(
+        "catalog.Group",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="fans",
+    )
+    
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
