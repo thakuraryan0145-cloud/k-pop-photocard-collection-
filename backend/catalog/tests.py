@@ -24,3 +24,31 @@ class SeedFixtureTests(TestCase):
     def test_should_load_3_groups_and_9_idols_when_seed_applied(self):
         self.assertEqual(Group.objects.count(), 3)
         self.assertEqual(Idol.objects.count(), 9)
+
+
+from django.contrib.auth import get_user_model
+from rest_framework.test import APITestCase
+
+
+class CatalogApiTests(APITestCase):
+    fixtures = ['seed_groups_idols']
+
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            email='t@example.com', password='pass12345', display_name='Tester')
+
+    def test_should_reject_when_not_authenticated(self):
+        response = self.client.get('/api/groups/')
+        self.assertIn(response.status_code, (401, 403))
+
+    def test_should_list_3_groups_when_authenticated(self):
+        self.client.force_authenticate(self.user)
+        response = self.client.get('/api/groups/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['count'], 3)
+
+    def test_should_filter_idols_by_group_when_group_given(self):
+        self.client.force_authenticate(self.user)
+        group = Group.objects.get(name='BLACKPINK')
+        response = self.client.get(f'/api/idols/?group={group.group_id}')
+        self.assertEqual(response.json()['count'], 3)
