@@ -62,3 +62,4 @@ jobs:
       - run: npm test --if-present -- --watchAll=false
       - run: npm run build
 
+  # Deploy jobs are added in Phase 4/5 (main only, needs both test jobs).
