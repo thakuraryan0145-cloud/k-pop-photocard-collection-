@@ -14,7 +14,7 @@ function Catalog() {
       <h1>Photocard Catalog</h1>
       <p>Explore K-Pop photocards.</p>
 
-      {/* Display all groups */}
+      {/* K-Pop Groups */}
       <div className="catalog-grid">
         {mockGroups.map((group) => (
           <div className="card" key={group.id}>
@@ -28,7 +28,7 @@ function Catalog() {
         ))}
       </div>
 
-      {/* Display selected group's idols below the groups */}
+      {/* Selected Group's Idols */}
       {selectedGroup !== null && (
         <div>
           <h2>Idols</h2>
@@ -42,6 +42,15 @@ function Catalog() {
               filteredIdols.map((idol) => (
                 <div className="card" key={idol.id}>
                   <h3>{idol.name}</h3>
+
+                  <p>
+                    Group:{" "}
+                    {
+                      mockGroups.find(
+                        (group) => group.id === idol.group
+                      )?.name
+                    }
+                  </p>
                 </div>
               ))
             ) : (
