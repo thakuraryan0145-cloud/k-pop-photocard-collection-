@@ -1,0 +1,143 @@
+[
+  {
+    "model": "catalog.group",
+    "pk": "fc3a723e-24f4-572e-802d-77eebf1f2225",
+    "fields": {
+      "name": "BLACKPINK",
+      "agency": "",
+      "debut_date": null,
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "d77b64d1-8839-5853-baf7-2fcfaadc7be9",
+    "fields": {
+      "stage_name": "Jennie",
+      "group": "fc3a723e-24f4-572e-802d-77eebf1f2225",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "9a09e804-6f61-54f3-ad9d-6b67987f68a2",
+    "fields": {
+      "stage_name": "Lisa",
+      "group": "fc3a723e-24f4-572e-802d-77eebf1f2225",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "604f28de-63c8-56e1-9443-d9832bd09fc8",
+    "fields": {
+      "stage_name": "Jisoo",
+      "group": "fc3a723e-24f4-572e-802d-77eebf1f2225",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.group",
+    "pk": "bd78b547-628d-5bc0-adbc-3ccfeb6e528a",
+    "fields": {
+      "name": "aespa",
+      "agency": "",
+      "debut_date": null,
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "3bb1ce0f-08e1-5d78-bbcf-7d02b74020b4",
+    "fields": {
+      "stage_name": "Karina",
+      "group": "bd78b547-628d-5bc0-adbc-3ccfeb6e528a",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "9bde5ff9-0965-5040-b93c-1bbddda63dd4",
+    "fields": {
+      "stage_name": "Winter",
+      "group": "bd78b547-628d-5bc0-adbc-3ccfeb6e528a",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "d43bbdad-aafa-51ee-aa2f-79cb6763370f",
+    "fields": {
+      "stage_name": "Giselle",
+      "group": "bd78b547-628d-5bc0-adbc-3ccfeb6e528a",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.group",
+    "pk": "cabaf691-de0d-5720-84e6-e418d81d1cdf",
+    "fields": {
+      "name": "TWICE",
+      "agency": "",
+      "debut_date": null,
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "30f3a081-3373-5cc5-ae18-a5856e79296f",
+    "fields": {
+      "stage_name": "Nayeon",
+      "group": "cabaf691-de0d-5720-84e6-e418d81d1cdf",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "ca621695-1adc-58ef-8212-9fde404178d5",
+    "fields": {
+      "stage_name": "Jihyo",
+      "group": "cabaf691-de0d-5720-84e6-e418d81d1cdf",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.idol",
+    "pk": "969f6d97-26f3-524a-b1fc-930931ca1e3a",
+    "fields": {
+      "stage_name": "Tzuyu",
+      "group": "cabaf691-de0d-5720-84e6-e418d81d1cdf",
+      "birth_date": null,
+      "position": "",
+      "created_at": "2026-10-10T00:00:00Z",
+      "updated_at": "2026-10-10T00:00:00Z"
+    }
+  }
+]
