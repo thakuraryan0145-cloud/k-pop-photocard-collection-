@@ -1,14 +1,22 @@
-export const registerUser = (user) => {
-  const existingUser = JSON.parse(localStorage.getItem("user"));
 
-  if (existingUser && existingUser.email === user.email) {
+export const registerUser = (user) => {
+  const savedUser = JSON.parse(
+    localStorage.getItem("user") || "null"
+  );
+
+  if (savedUser && savedUser.email === user.email) {
     return {
       success: false,
       message: "An account with this email already exists.",
     };
   }
 
-  localStorage.setItem("user", JSON.stringify(user));
+  const safeUser = {
+    email: user.email,
+    displayName: user.displayName,
+  };
+
+  localStorage.setItem("user", JSON.stringify(safeUser));
 
   return {
     success: true,
@@ -16,8 +24,10 @@ export const registerUser = (user) => {
   };
 };
 
-export const loginUser = (email, password) => {
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+export const loginUser = (email, _password) => {
+  const savedUser = JSON.parse(
+    localStorage.getItem("user") || "null"
+  );
 
   if (!savedUser) {
     return {
@@ -26,13 +36,10 @@ export const loginUser = (email, password) => {
     };
   }
 
-  if (
-    savedUser.email !== email ||
-    savedUser.password !== password
-  ) {
+  if (savedUser.email !== email) {
     return {
       success: false,
-      message: "Invalid email or password.",
+      message: "No account found for this email.",
     };
   }
 
