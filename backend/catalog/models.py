@@ -41,3 +41,40 @@ class Idol(TimeStamped):
 
     def __str__(self):
         return f'{self.stage_name} ({self.group.name})'
+
+class Photocard(TimeStamped):
+    class CardType(models.TextChoices):
+        MEMBER = 'member', 'Individual Member'
+        GROUP = 'group', 'Group'
+
+    photocard_id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+    )
+    group = models.ForeignKey(
+        Group,
+        on_delete=models.RESTRICT,
+        related_name='photocards',
+    )
+    idols = models.ManyToManyField(
+        Idol,
+        blank=True,
+        related_name='photocards',
+    )
+    card_type = models.CharField(
+        max_length=10,
+        choices=CardType.choices,
+        default=CardType.MEMBER,
+    )
+    album_name = models.CharField(max_length=150)
+    version = models.CharField(max_length=100, blank=True)
+    rarity = models.CharField(max_length=50)
+    image_url = models.URLField(blank=True)
+
+    class Meta:
+        db_table = 'photocards'
+        ordering = ['group__name', 'album_name', 'rarity']
+
+    def __str__(self):
+        return f'{self.group.name} - {self.album_name} ({self.card_type})'
